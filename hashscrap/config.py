@@ -2,6 +2,7 @@
 
 These models intentionally do not depend on Scrapy or a persistence backend.
 """
+
 from __future__ import annotations
 
 import os
@@ -100,8 +101,10 @@ class SourceRegistry(BaseModel):
 
 def load_registry(path: str | Path | None = None) -> SourceRegistry:
     """Load and validate a TOML registry without echoing invalid input values."""
-    config_path = Path(path) if path is not None else Path(
-        os.environ.get("HASHSCRAP_CONFIG", "hashscrap.toml")
+    config_path = (
+        Path(path)
+        if path is not None
+        else Path(os.environ.get("HASHSCRAP_CONFIG", "hashscrap.toml"))
     )
 
     try:
