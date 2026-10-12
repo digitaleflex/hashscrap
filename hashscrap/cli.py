@@ -12,10 +12,7 @@ def build_parser() -> argparse.ArgumentParser:
     """Build the argument parser for the initial CLI."""
     parser = argparse.ArgumentParser(
         prog="hashscrap",
-        description=(
-            "HashScrap — bounded collection and extraction for authorized "
-            "public-source research."
-        ),
+        description="HashScrap — bounded collection and extraction for authorized public-source research.",
     )
     parser.add_argument(
         "--version",
