@@ -112,6 +112,7 @@ def validate_url(
     except ValueError:
         literal_address = None
 
+    addresses: tuple[str, ...]
     if literal_address is not None:
         addresses = (str(literal_address),)
     else:
