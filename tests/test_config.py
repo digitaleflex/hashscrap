@@ -1,4 +1,5 @@
 """Tests for source registry validation and configuration loading."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -97,8 +98,8 @@ def test_invalid_limits_are_rejected() -> None:
 def test_load_registry_from_toml(tmp_path: Path) -> None:
     config_path = tmp_path / "hashscrap.toml"
     config_path.write_text(
-        '[limits]\nmax_pages_per_source = 100\nmax_depth = 3\n'
-        'max_concurrency = 8\nmax_response_bytes = 2000000\n\n'
+        "[limits]\nmax_pages_per_source = 100\nmax_depth = 3\n"
+        "max_concurrency = 8\nmax_response_bytes = 2000000\n\n"
         '[[sources]]\nid = "public-site"\nname = "Public site"\n'
         'kind = "website"\nbase_url = "https://example.org"\nenabled = true\n',
         encoding="utf-8",
