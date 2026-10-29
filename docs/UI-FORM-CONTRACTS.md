@@ -7,12 +7,8 @@ Ce document fait le lien entre les champs du prototype `prototypes/hashscrap-ui/
 Le formulaire de préparation de source reflète `hashscrap.config.Source` dans `hashscrap/config.py` :
 
 - `id`, `name`, `type`, `base_url`, `enabled`, `allowed_hosts`
-- `limits.timeout_seconds`
-- `limits.concurrency`
-- `limits.requests_per_second`
-- `limits.max_depth`
-- `limits.max_pages`
-- `limits.max_response_bytes`
+- `AppConfig.limits.timeout_seconds`, `AppConfig.limits.concurrency`, `AppConfig.limits.requests_per_second`, `AppConfig.limits.max_depth`, `AppConfig.limits.max_pages`, `AppConfig.limits.max_response_bytes` (limites globales)
+- `Source.limits.timeout_seconds`, `Source.limits.concurrency`, `Source.limits.requests_per_second`, `Source.limits.max_depth`, `Source.limits.max_pages`, `Source.limits.max_response_bytes` (limites propres à la source)
 
 `type` est limité à `website`. `allowed_hosts` doit contenir uniquement des noms d’hôtes, et l’hôte de `base_url` doit être inclus dans cette liste. Les limites d’une source ne peuvent pas dépasser les limites globales de `AppConfig`. Le formulaire n’enregistre pas ces valeurs : il rappelle qu’elles doivent être reportées dans le fichier JSON de configuration.
 
